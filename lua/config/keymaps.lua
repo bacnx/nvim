@@ -6,26 +6,26 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Increment/decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
+keymap.set("n", "+", "<C-a>")
+keymap.set("n", "-", "<C-x>")
 
 -- New tab
-keymap.set('n', 'te', ':tabedit <Return>')
+keymap.set("n", "te", ":tabedit <Return>")
 -- Move tab
-keymap.set('n', '<Tab>', ':tabnext <Return>', opts)
-keymap.set('n', 'S-<Tab>', ':tabprev <Return>', opts)
+keymap.set("n", "<Tab>", ":tabnext <Return>", opts)
+keymap.set("n", "<S-Tab>", ":tabprev <Return>", opts)
 -- Close tab
-keymap.set('n', 'tq', ':quit <Return>', opts)
+keymap.set("n", "tq", ":quit <Return>", opts)
 -- Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w', opts)
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w', opts)
+keymap.set("n", "ss", ":split<Return><C-w>w", opts)
+keymap.set("n", "sv", ":vsplit<Return><C-w>w", opts)
 -- Move window
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sl', '<C-w>l')
+keymap.set("", "sh", "<C-w>h")
+keymap.set("", "sk", "<C-w>k")
+keymap.set("", "sj", "<C-w>j")
+keymap.set("", "sl", "<C-w>l")
 
 -- Diagnostics
-keymap.set('n', '<C-j>', function()
+keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end, opts)
