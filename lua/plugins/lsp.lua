@@ -12,6 +12,7 @@ return {
         "tailwindcss-language-server",
         "typescript-language-server",
         "css-lsp",
+        "emmet-ls",
         "gopls",
       })
     end,
@@ -24,6 +25,7 @@ return {
       inlay_hints = { enabled = true },
       servers = {
         cssls = {},
+        emmet_ls = {},
         tailwindcss = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
