@@ -14,6 +14,7 @@ return {
         "css-lsp",
         "emmet-ls",
         "gopls",
+        "astro-language-server",
       })
     end,
   },
@@ -24,11 +25,11 @@ return {
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- change keymaps
-      keys[#keys+1] = {
+      keys[#keys + 1] = {
         "gd",
         function()
           require("telescope.builtin").lsp_definitions({
-            jump_type = "tab"
+            jump_type = "tab",
           })
         end,
         desc = "Goto Definition (new tab)",
@@ -148,6 +149,7 @@ return {
           },
         },
         gopls = {},
+        astro = {},
       },
       setup = {},
     },

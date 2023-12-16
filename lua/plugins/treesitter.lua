@@ -10,19 +10,20 @@ return {
         "make",
         "scss",
         "sql",
+        "astro",
       },
     },
 
     config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
+      require("nvim-treesitter.configs").setup(opts)
 
-			-- MDX
-			vim.filetype.add({
-				extension = {
-					mdx = "mdx",
-				},
-			})
-			vim.treesitter.language.register("markdown", "mdx")
-		end,
-  }
+      -- MDX
+      vim.filetype.add({
+        extension = {
+          mdx = "mdx",
+        },
+      })
+      vim.treesitter.language.register("markdown", "mdx")
+    end,
+  },
 }
