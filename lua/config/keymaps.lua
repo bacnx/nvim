@@ -13,9 +13,20 @@ keymap.set("n", "-", "<C-x>")
 keymap.set("n", "te", ":tabedit <Return>")
 -- Move tab
 keymap.set("n", "<Tab>", ":tabnext <Return>", opts)
-keymap.set("n", "<S-Tab>", ":tabprev <Return>", opts)
+keymap.set("n", "S-<Tab>", ":tabprev <Return>", opts)
 -- Close tab
-keymap.set("n", "tq", ":quit <Return>", opts)
+keymap.set("n", "tq", function()
+  local total_tabs = vim.fn.tabpagenr("$")
+  local current_tab = vim.fn.tabpagenr()
+  local total_windows = vim.fn.tabpagewinnr(vim.fn.tabpagenr(), "$")
+
+  if current_tab == 1 or current_tab == total_tabs or total_windows > 1 then
+    vim.api.nvim_command("quit")
+  else
+    vim.api.nvim_command("quit")
+    vim.api.nvim_command("tabprev")
+  end
+end, opts)
 -- Split window
 keymap.set("n", "ss", ":split<Return><C-w>w", opts)
 keymap.set("n", "sv", ":vsplit<Return><C-w>w", opts)

@@ -12,7 +12,9 @@ return {
         "tailwindcss-language-server",
         "typescript-language-server",
         "css-lsp",
+        "emmet-ls",
         "gopls",
+        "astro-language-server",
       })
     end,
   },
@@ -20,10 +22,25 @@ return {
   -- lsp servers
   {
     "neovim/nvim-lspconfig",
+    init = function()
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      -- change keymaps
+      keys[#keys + 1] = {
+        "gd",
+        function()
+          require("telescope.builtin").lsp_definitions({
+            jump_type = "tab",
+          })
+        end,
+        desc = "Goto Definition (new tab)",
+        has = "definition",
+      }
+    end,
     opts = {
       inlay_hints = { enabled = true },
       servers = {
         cssls = {},
+        emmet_ls = {},
         tailwindcss = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
@@ -132,6 +149,7 @@ return {
           },
         },
         gopls = {},
+        astro = {},
       },
       setup = {},
     },
