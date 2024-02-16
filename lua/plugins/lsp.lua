@@ -15,6 +15,7 @@ return {
         "emmet-ls",
         "gopls",
         "astro-language-server",
+        "clangd",
       })
     end,
   },
@@ -150,6 +151,7 @@ return {
         },
         gopls = {},
         astro = {},
+        clangd = {},
       },
       setup = {},
     },

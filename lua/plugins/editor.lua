@@ -22,8 +22,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.live_grep()
         end,
-        desc =
-        "Search for a string in your current working directory and get result live as you type, respects .gitignore",
+        desc = "Search for a string in your current working directory and get result live as you type, respects .gitignore",
       },
       {
         "\\\\",
@@ -121,12 +120,23 @@ return {
                   actions.move_selection_next(prompt_bufnr)
                 end
               end,
-            }
-          }
-        }
+            },
+          },
+        },
       }
       telescope.setup(opts)
       require("telescope").load_extension("file_browser")
-    end
+    end,
+  },
+  {
+    "CRAG666/code_runner.nvim",
+    config = true,
+    keys = {
+      {
+        "<leader>rr",
+        ":RunCode<CR>",
+        desc = "Runs based on file type",
+      },
+    },
   },
 }
