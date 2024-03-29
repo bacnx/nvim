@@ -56,10 +56,10 @@ return {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
     keys = {
-      { '<Tab>', '<Cmd>BufferLineCycleNext<CR>', desc = 'Next tab' },
-      { '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', desc = 'Prev tab' },
-      { '<S-h>', '<Cmd>bprevious<CR>', desc = 'Prev buffer' },
-      { '<S-l>', '<Cmd>bnext<CR>', desc = 'Next buffer' },
+      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
+      { "<S-h>", "<Cmd>bprevious<CR>", desc = "Prev buffer" },
+      { "<S-l>", "<Cmd>bnext<CR>", desc = "Next buffer" },
     },
     opts = {
       options = {

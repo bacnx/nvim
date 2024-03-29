@@ -40,3 +40,9 @@ keymap.set("", "sl", "<C-w>l")
 keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end, opts)
+
+-- Copy current file path to clipboard
+keymap.set("n", "<leader>fp", function()
+  print("Copied: " .. vim.fn.expand("%"))
+  vim.fn.setreg("+", vim.fn.expand("%"))
+end, opts)

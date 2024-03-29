@@ -35,6 +35,15 @@ return {
         desc = "Goto Definition (new tab)",
         has = "definition",
       }
+      keys[#keys + 1] = {
+        "gI",
+        function()
+          require("telescope.builtin").lsp_implementations({
+            jump_type = "tab",
+          })
+        end,
+        desc = "Goto Implementation (new tab)",
+      }
     end,
     opts = {
       inlay_hints = { enabled = true },
