@@ -149,7 +149,15 @@ return {
             },
           },
         },
-        gopls = {},
+        gopls = {
+          settings = {
+            gopls = {
+              analyses = {
+                fieldalignment = false,
+              },
+            },
+          },
+        },
         astro = {},
         clangd = {},
       },
