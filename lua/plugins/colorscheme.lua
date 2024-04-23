@@ -3,20 +3,28 @@ return {
     "folke/tokyonight.nvim",
     opts = {
       transparent = true,
-      on_highlights = function(hl, c)
-        hl.TelescopeNormal = {
-          bg = "none",
-          fg = c.fg_light,
-        }
-        hl.TelescopeBorder = {
-          bg = "none",
-          fg = "#3d59a1",
-        }
-      end,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
     },
-    styles = {
-      sidebars = "transparent",
-      floats = "transparent",
+  },
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "solarized-osaka",
     },
   },
 }
