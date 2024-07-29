@@ -11,6 +11,7 @@ return {
         "scss",
         "sql",
         "astro",
+        "kotlin",
       },
     },
 

@@ -16,6 +16,7 @@ return {
         "gopls",
         "astro-language-server",
         "clangd",
+        "kotlin-language-server",
       })
     end,
   },
@@ -38,7 +39,7 @@ return {
       }
     end,
     opts = {
-      inlay_hints = { enabled = true },
+      -- inlay_hints = { enabled = true },
       servers = {
         cssls = {},
         emmet_ls = {},
@@ -160,6 +161,7 @@ return {
         },
         astro = {},
         clangd = {},
+        kotlin_language_server = {},
       },
       setup = {},
     },

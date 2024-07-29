@@ -143,6 +143,11 @@ return {
           "cd $dir &&",
           "go run $fileName",
         },
+        kotlin = {
+          "cd $dir &&",
+          "kotlinc $fileName -include-runtime -d $fileNameWithoutExt.jar &&",
+          "java -jar $fileNameWithoutExt.jar",
+        },
       },
     },
   },
